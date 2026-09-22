@@ -11,8 +11,15 @@
 START hilow_game
 
     # Establish a valid guessing range.
-    TODO: Obtain the lower and upper bounds.
-    TODO: Repeat as needed until the bounds satisfy the requirement.
+    Obtain the lower bound from the user.
+Obtain the upper bound from the user.
+
+WHILE lower bound >= upper bound
+    Display "The upper bound must be greater than the lower bound."
+    Obtain the lower bound from the user.
+    Obtain the upper bound from the user.
+END WHILE
+ 
 
     # Establish the number the player is trying to guess.
     TODO: Generate the required random number from the valid range.
