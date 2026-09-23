@@ -19,17 +19,31 @@ from random import randint
 def main() -> None:
     """Run the optional higher/lower game practice program."""
 
-    # TODO: Obtain and validate the lower and upper bounds.
+            lower = int(input("Enter the lower bound: "))
+    upper = int(input("Enter the upper bound: "))
 
-    # TODO: Generate a random number from the valid range using randint.
+    while lower >= upper:
+        print("Invalid bounds. The lower bound must be less than the upper bound.")
+        lower = int(input("Enter the lower bound: "))
+        upper = int(input("Enter the upper bound: "))
 
-    # TODO: Obtain and validate the player's first guess.
+    number = randint(lower, upper)
 
-    # TODO: Repeat until the player guesses the random number.
-    # Give too-low or too-high feedback for incorrect valid guesses.
-    # Obtain and validate another guess when the game continues.
+    guess = int(input(f"Guess a number from {lower} to {upper}: "))
 
-    # TODO: Display a success message after the correct guess.
+    while guess != number:
+        if guess < lower or guess > upper:
+            print("Invalid guess. Enter a number within the valid range.")
+        elif guess < number:
+            print("Too low.")
+        else:
+            print("Too high.")
+
+        guess = int(input(f"Guess a number from {lower} to {upper}: "))
+
+    print("Congratulations! You guessed the correct number.")
+
+    
 
 
 # === Main Guard ===
